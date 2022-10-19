@@ -27,8 +27,10 @@ listaPeliculasMilenio = listaPeliculas.filter(peli => peli.fecha.getFullYear() >
 
 autoresDePeliculas = listaPeliculas.map(director => director=director.director)
 
+titulosDePeliculas = listaPeliculas.map(titulo => titulo=titulo.titulo)
+
 autoresConTitulos = listaPeliculas.map(lista => lista = lista.titulo.concat(" por ",lista.director))
 
-autoresConTitulosPropaga = listaPeliculas.map(lista => lista = lista.titulo+" por "+lista.director)
+autoresConTitulosPropaga = listaPeliculas.map(lista => lista = [...titulosDePeliculas,...autoresDePeliculas])
 
 console.log(autoresConTitulosPropaga)
